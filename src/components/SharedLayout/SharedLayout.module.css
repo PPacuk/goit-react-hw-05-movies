@@ -1,0 +1,17 @@
+.globalContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 60px;
+  font-size: x-large;
+  font-family:'Courier New', Courier, monospace
+}
+
+.navActive {
+  color: rgb(238, 54, 54);
+}
