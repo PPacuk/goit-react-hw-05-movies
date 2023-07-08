@@ -1,22 +1,26 @@
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { fetchMoviesByQuery } from 'services/api';
+import { Notify } from 'notiflix';
 
 export const Movies = () => {
   const [query, setQuery] = useState('');
   const [queryList, setQueryList] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const searchQueryParams = searchParams.get('title');
-  
+
 
   const submitHandler = async e => {
     e.preventDefault();
-    
+    searchParams.get('query');
+    if (query === '') {
+      return Notify.failure('Field is empty!!!');
+    }
+
     try {
       const queryList = await fetchMoviesByQuery(`${query}`);
       setQueryList(queryList);
-      setSearchParams({query})
+      setSearchParams({ query: query });
     } catch (err) {
       console.log(err.message);
     }
@@ -29,7 +33,7 @@ export const Movies = () => {
   return (
     <div>
       <form onSubmit={submitHandler}>
-        <input type="text" onChange={inputHandler} />
+        <input type="text" value={`${query}`} onChange={inputHandler} />
         <button type="submit">Search</button>
       </form>
       <ul>
