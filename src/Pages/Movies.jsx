@@ -5,15 +5,18 @@ import { fetchMoviesByQuery } from 'services/api';
 export const Movies = () => {
   const [query, setQuery] = useState('');
   const [queryList, setQueryList] = useState([]);
-  const [setSearchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const searchQueryParams = searchParams.get('title');
+  
 
   const submitHandler = async e => {
     e.preventDefault();
-
+    
     try {
       const queryList = await fetchMoviesByQuery(`${query}`);
       setQueryList(queryList);
-      setSearchParams({ query });
+      setSearchParams({query})
     } catch (err) {
       console.log(err.message);
     }
