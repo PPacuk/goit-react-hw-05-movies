@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, Link } from 'react-router-dom';
 import { fetchMoviesByQuery } from 'services/api';
 import { Notify } from 'notiflix';
 
@@ -38,7 +38,7 @@ export const Movies = () => {
       </form>
       <ul>
         {queryList.map(({ id, title }) => (
-          <li key={id}>{title}</li>
+          <li key={id}><Link to={`${id}`}>{title}</Link></li>
         ))}
       </ul>
     </div>
