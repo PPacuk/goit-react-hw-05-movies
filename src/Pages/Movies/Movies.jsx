@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { fetchMoviesByQuery } from 'services/api';
 import { Notify } from 'notiflix';
+import css from './Movies.module.css'
 
 export const Movies = () => {
   const [query, setQuery] = useState('');
@@ -31,14 +32,16 @@ export const Movies = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={submitHandler}>
-        <input type="text" value={`${query}`} onChange={inputHandler} />
+    <div className={css.moviesContainer}>
+      <form className={css.moviesForm} onSubmit={submitHandler}>
+        <input className={css.moviesInput} type="text" value={`${query}`} onChange={inputHandler} />
         <button type="submit">Search</button>
       </form>
-      <ul>
+      <ul className={css.moviesList}>
         {queryList.map(({ id, title }) => (
-          <li key={id}><Link to={`${id}`}>{title}</Link></li>
+          <li key={id}>
+            <Link to={`${id}`}>{title}</Link>
+          </li>
         ))}
       </ul>
     </div>

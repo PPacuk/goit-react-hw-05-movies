@@ -9,7 +9,8 @@
   justify-content: space-around;
   height: 60px;
   font-size: x-large;
-  font-family:'Courier New', Courier, monospace
+  font-family:'Courier New', Courier, monospace;
+  box-shadow: 1px 1px 12px -3px rgba(66, 68, 90, 1);
 }
 
 .navActive {
