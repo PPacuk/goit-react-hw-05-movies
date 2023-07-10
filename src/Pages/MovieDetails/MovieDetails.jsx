@@ -8,7 +8,7 @@ export const MovieDetails = () => {
   const { movieId } = useParams();
   const imageUrl = `https://image.tmdb.org/t/p/original/${movieCard.poster_path}`;
   console.log(imageUrl);
-  const { genres, original_title, vote_average, overview } = movieCard;
+  const {  original_title, vote_average, overview } = movieCard;
 console.log(movieCard);
   const getMovieDetailsById = async movieId => {
     try {
