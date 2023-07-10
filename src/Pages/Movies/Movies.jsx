@@ -40,7 +40,7 @@ export const Movies = () => {
       <ul className={css.moviesList}>
         {queryList.map(({ id, title }) => (
           <li key={id}>
-            <Link to={`${id}`}>{title}</Link>
+            <Link to={`${id}`} >{title}</Link>
           </li>
         ))}
       </ul>
