@@ -1,0 +1,17 @@
+.extraInfo{
+    margin: 20px 0;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    box-shadow: 1px 1px 12px -3px rgba(66, 68, 90, 1);
+    text-align:center
+}
+
+.extraInfoList{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 0 30px;
+}
