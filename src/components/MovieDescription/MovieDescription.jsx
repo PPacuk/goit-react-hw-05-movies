@@ -9,14 +9,17 @@ export const MovieDescription = ({ movieCard }) => {
     poster_path,
     genres,
   } = movieCard;
+  const imgNotFound = 'img not found'
 
-  const imageUrl = `https://image.tmdb.org/t/p/original/${poster_path}`;
+  const imageUrl = poster_path
+    ? `https://image.tmdb.org/t/p/w500/${poster_path}`
+    : imgNotFound;
   const getDate = new Date(`${release_date}`);
   const getYear = getDate.getFullYear();
 
   return (
     <div className={css.movieDetailsContainer}>
-      <img className={css.cardImg} src={imageUrl} alt="" />
+      <img className={css.cardImg} src={imageUrl} alt={original_title} />
       <ul className={css.description}>
         <li>
           <h2>

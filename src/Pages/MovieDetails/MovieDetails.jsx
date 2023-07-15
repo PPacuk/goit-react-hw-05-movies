@@ -6,11 +6,11 @@ import { Loader } from 'components/Loader/Loader';
 import css from './MovieDetails.module.css';
 
 export const MovieDetails = () => {
-  const [movieCard, setMovieCard] = useState();
+  const [movieCard, setMovieCard] = useState(null);
   const { movieId } = useParams();
 
   useEffect(() => {
-    const getMovieDetailsById = async movieId => {
+    const getMovieDetailsById = async () => {
       try {
         const movieCard = await fetchMovieDetailsById(movieId);
         setMovieCard(movieCard);
@@ -18,7 +18,7 @@ export const MovieDetails = () => {
         console.log(err.message);
       }
     };
-    getMovieDetailsById(movieId);
+    getMovieDetailsById();
   }, [movieId]);
 
   return (
