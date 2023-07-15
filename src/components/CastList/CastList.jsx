@@ -1,5 +1,8 @@
+import { PropTypes } from 'prop-types';
+
 export const CastList = ({ castCard }) => {
   const IMAGE_URL = `https://image.tmdb.org/t/p/original/`;
+
   return (
     <div>
       <ul>
@@ -12,4 +15,13 @@ export const CastList = ({ castCard }) => {
       </ul>
     </div>
   );
+};
+
+CastList.propTypes = {
+  castCard: PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    character: PropTypes.string,
+    profile_path: PropTypes.string,
+  }),
 };

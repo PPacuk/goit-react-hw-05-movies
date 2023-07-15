@@ -8,7 +8,6 @@ import css from './MovieDetails.module.css';
 const MovieDetails = () => {
   const [movieCard, setMovieCard] = useState(null);
   const { movieId } = useParams();
-
   const location = useLocation();
   const goBackLinkHref = location.state?.from ?? '/';
 
@@ -37,12 +36,12 @@ const MovieDetails = () => {
         Additional information
         <ul className={css.extraInfoList}>
           <li>
-            <Link to="cast" state={{ from: location }}>
+            <Link to="cast" state={{ from: goBackLinkHref }}>
               Cast
             </Link>
           </li>
           <li>
-            <Link to="reviews" state={{ from: location }}>
+            <Link to="reviews" state={{ from: goBackLinkHref }}>
               Reviews
             </Link>
           </li>

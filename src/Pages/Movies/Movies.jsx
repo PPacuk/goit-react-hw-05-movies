@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useSearchParams, Link, useLocation } from 'react-router-dom';
 import { fetchMoviesByQuery } from 'services/api';
 import { Notify } from 'notiflix';
+import { PropTypes } from 'prop-types';
 import css from './Movies.module.css';
 
  const Movies = () => {
@@ -62,5 +63,10 @@ import css from './Movies.module.css';
     </div>
   );
 };
+
+Movies.propTypes = {
+  query: PropTypes.string,
+  queryList: PropTypes.array,
+}
 
 export default Movies;

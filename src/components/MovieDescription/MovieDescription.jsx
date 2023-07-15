@@ -1,4 +1,5 @@
 import css from './MovieDescription.module.css';
+import { PropTypes } from 'prop-types';
 
 export const MovieDescription = ({ movieCard }) => {
   const {
@@ -38,4 +39,15 @@ export const MovieDescription = ({ movieCard }) => {
       </ul>
     </div>
   );
+};
+
+MovieDescription.propTypes = {
+  movieCard: PropTypes.shape({
+    original_title: PropTypes.string,
+    vote_average: PropTypes.number,
+    overview: PropTypes.string,
+    release_date: PropTypes.string,
+    poster_path: PropTypes.string,
+    genres: PropTypes.array,
+  }),
 };
