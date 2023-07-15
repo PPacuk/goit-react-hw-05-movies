@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { fetchCastById } from 'services/api';
 import css from './Cast.module.css';
 
-export const Cast = () => {
+const Cast = () => {
   const [castCard, setCastCard] = useState();
   const { movieId } = useParams();
   const IMAGE_URL = `https://image.tmdb.org/t/p/original/`;
@@ -55,3 +55,5 @@ export const Cast = () => {
     </>
   );
 };
+
+export default Cast;

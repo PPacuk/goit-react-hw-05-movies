@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { fetchTrendingMovies } from 'services/api';
 import css from './Home.module.css'
 
-export const Home = () => {
+ const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
-
+  const location = useLocation();
+  
   const getTrendingMovies = async () => {
     try {
       const trendingMovies = await fetchTrendingMovies();
@@ -25,10 +26,12 @@ export const Home = () => {
       <ul className={css.homeList}>
         {trendingMovies.map(({ id, title }) => (
           <li key={id}>
-            <Link to={`/movies/${id}`}>{title}</Link>
+            <Link to={`/movies/${id}`} state={{ from: location }}>{title}</Link>
           </li>
         ))}
       </ul>
     </div>
   );
-};
+ };
+
+export default Home;
