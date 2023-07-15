@@ -1,22 +1,31 @@
-.castCard{
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
+.castCard {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.castItem{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-    border: 1px solid rgb(212, 205, 205);
-    border-radius: 5px;
-    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+.castItem {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+
+  border: 1px solid rgb(212, 205, 205);
+  border-radius: 5px;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
 }
 
-.castImg{
-    width: 200px;
-    height: 250px;
+.castImg {
+  width: 200px;
+  height: 250px;
+}
+
+.castNameList{
+    height: 70px;
+    width: 190px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

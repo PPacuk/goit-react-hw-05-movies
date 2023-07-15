@@ -1,4 +1,3 @@
-
 import { Loader } from 'components/Loader/Loader';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -45,8 +44,10 @@ export const Cast = () => {
                   alt={name}
                 />
               )}
-              <div>{name}</div>
-              <div>{character}</div>
+              <ul className={css.castNameList}>
+                <li>{name}</li>
+                <li>{character}</li>
+              </ul>
             </li>
           ))}
         </ul>
